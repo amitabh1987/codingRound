@@ -8,10 +8,12 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 
+import com.aventstack.extentreports.ExtentTest;
+
 public class Config {
 	public static String path="src/test/resources/config/";
 	private static final Properties props=new Properties();
-	
+	public static ExtentTest extentTest;
 	public void loadProps(String fileName){
 		try{
 			FileInputStream input= new FileInputStream(path+fileName);
@@ -28,4 +30,12 @@ public class Config {
 		return props.getProperty(key);
 	}
 
+
+	 public ExtentTest getExtentTest() {
+			return extentTest;
+		}
+	public void setExtentTest(ExtentTest extentTest) {
+		this.extentTest = extentTest;
+	}
+	 
 }

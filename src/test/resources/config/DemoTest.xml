@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Demo">
+
+	<parameter name="sourceFlightLocation" value="Bangalore" />
+	<parameter name="destinationFlightLocation" value="Delhi" />
+	<parameter name="location" value="Indiranagar, Bangalore" />
+	<parameter name="travellers" value="1 room, 2 adults" />
+	<test name="DemoTest">
+		<classes>
+			<class name="com.automation.tests.FlightBookingTest" />
+			<class name="com.automation.tests.HotelBookingTest" />
+			<class name="com.automation.tests.SignInTest" />
+		</classes>
+	</test>
+</suite>

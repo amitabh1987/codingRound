@@ -1,8 +1,5 @@
 package com.automation.pages;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.Select;
 
 import com.automation.utils.DriverManager;
 
@@ -14,8 +11,7 @@ public class HotelBooking extends BasePage{
 	private By categoryOptions=By.xpath("//ul[@id='ui-id-1']//li[@class='list']");
 	private By subTitle=By.xpath("//h2[@class='subTitle']");
 	
-	
-	String location="Indiranagar, Bangalore";
+	Logs logger= new Logs(HotelBooking.class);
 	
 	 public HotelBooking(DriverManager driver){
 	 super(driver);
@@ -25,14 +21,14 @@ public class HotelBooking extends BasePage{
 	  * search For Hotels
 	  * @throws Exception
 	  */
-    public void searchForHotels() throws Exception {
+    public void searchForHotels(String location,String travellers) throws Exception {
+    		logger.info("Search for hotels");
         driver.click(hotelLink);
         driver.sendKeys(localityTextBox,location);
         driver.selectFromList(categoryOptions,location);
         driver.click(subTitle);
-        driver.selectOptionByVisibleText(travellerSelection,"1 room, 2 adults");
+        driver.selectOptionByVisibleText(travellerSelection,travellers);
         driver.click(searchButton);
-
     }
 
 }

@@ -3,6 +3,7 @@ import org.openqa.selenium.By;
 import com.automation.utils.DriverManager;
 
 public class FlightResultPage extends BasePage{
+	Logs logger= new Logs(FlightResultPage.class);
 	private By SearchSummary=By.className("searchSummary");
     public FlightResultPage(DriverManager driver){
     	 super(driver);
@@ -12,6 +13,7 @@ public class FlightResultPage extends BasePage{
     *  Wait For Flight Result Page
     */
    public void waitForFlightResultPage() {
+	   logger.info("Wait For Flight Result Page");
 	   driver.waitForPageLoad();
    }
     /**
@@ -20,6 +22,7 @@ public class FlightResultPage extends BasePage{
      * @throws Exception 
      */
     public boolean verifyresultsAppearForAOneWayJourney() throws Exception {
+    		logger.info("Verifying results Appear For OneWay Journey");
 	    	driver.waitForLocatorToBeVisible(SearchSummary);
 	    return driver.isLocatorToBePresent(SearchSummary);
     }
