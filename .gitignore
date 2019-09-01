@@ -3,12 +3,7 @@ target
 .project
 .settings/
 test-output/
-logs/
 Output/
-reports/
-*.har
-bin/
 */target/**
 *.log
-ExtentReport/
 .DS_Store
